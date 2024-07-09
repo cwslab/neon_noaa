@@ -465,7 +465,7 @@ All unzipped monthly data folders have been removed.
 </section>
 <section id="finding-noaa-ghcnd-station">
 <h2>2. Finding NOAA GHCND Station<a class="headerlink" href="#finding-noaa-ghcnd-station" title="Link to this heading">#</a></h2>
-<p>In this step, we are going to search for the nearest GHCND Station to our NEON Station with the most upto date data. You can modify the radius if the search yields nothing.</p>
+<p>In this step, we are going to search for the nearest GHCND Station to our NEON Station with the most upto date data. You can modify the radius.</p>
 <p><strong>Define Variables</strong></p>
 <p>To request data from NOAA, we will need to request an access token, which essentially confirms that we are a trusted source asking for data: <a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web/token">Request a Token here</a>.</p>
 <img src="_static/api_token.png" width="800" height="400">
@@ -486,8 +486,8 @@ All unzipped monthly data folders have been removed.
 <p>Here, using the location details of the <code class="docutils literal notranslate"><span class="pre">NEON</span></code> site of interest (Latitude, Longitude and Elevation), we shall search all <code class="docutils literal notranslate"><span class="pre">NOAA</span> <span class="pre">Stations</span></code> within a specified radius. The code extracts these stations information using the <code class="docutils literal notranslate"><span class="pre">NOAA-API</span></code>. We shall then proceed to compute the elevation using the <code class="docutils literal notranslate"><span class="pre">Open-Elevation</span> <span class="pre">API</span></code>. To find the closest station, we define a score based on the distance and the elevation which helps to find the NOAA station that closely matches the NEON-site according to the latitude, longitude and elevation parameters. The code then prints the station details including <code class="docutils literal notranslate"><span class="pre">station_id</span></code>, the <code class="docutils literal notranslate"><span class="pre">distance</span></code> from NEON site, <code class="docutils literal notranslate"><span class="pre">elevation</span> <span class="pre">difference</span></code>, <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> dates of the available data records.</p>
 <p><strong>Define Functions</strong></p>
 <ul class="simple">
-<li><p>elev_by_lat_lon: Cxtracts elevation for a location given the lat, lon using the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Elevation</span> <span class="pre">API</span></code>.</p></li>
-<li><p>calc_dist: Calculate the distance between two points (lat and lon) using the Haversine formula (a more accurate way to computes distance between surface points given their cordinates):</p></li>
+<li><p>elev_by_lat_lon: Extracts elevation for a location given the lat, lon using the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Elevation</span> <span class="pre">API</span></code>.</p></li>
+<li><p>calc_dist: Calculates the distance between two points (lat and lon) using the Haversine formula (a more accurate way to computes distance between surface points given their cordinates):</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

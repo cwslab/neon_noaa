@@ -1,0 +1,26 @@
+name: neon-noaa
+channels:
+  - conda-forge
+dependencies:
+  # Core Python + Jupyter
+  - python=3.11
+  - pip
+  - jupyterlab
+  - ipykernel
+
+  # Python packages
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - requests
+  - numpy
+
+  # R + rpy2 bridge
+  - r-base
+  - rpy2
+
+  # Required R packages (called from rpy2)
+  - r-neonutilities
+  - r-ggplot2
+  - r-dplyr
+  - r-tidyr
